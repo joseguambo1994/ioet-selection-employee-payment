@@ -1,0 +1,15 @@
+{
+  "name": "ioet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ioet.js",
+  "dependencies": {
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
