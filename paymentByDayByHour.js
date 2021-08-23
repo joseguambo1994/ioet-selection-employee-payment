@@ -53,11 +53,24 @@
 function printValues(){
 
    // const work = "MO10:00-12:00";
-   const work = "MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
+   const work = "RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00";
+   const workNameDeleted = work.slice(4, work.length-1);
+    console.error(workNameDeleted);
+
+    const regexEqual = /=.*/g;
+    const afterEqualArray = work.match(regexEqual);
+    const afterEqualString = afterEqualArray ? afterEqualArray[0] :null;
+    console.error("afterEqual", afterEqualString);
+
+
     let reDay = /[A-Z][A-Z]/g
-    const day = work.match(reDay);
+    const day = afterEqualString.match(reDay);
     let reStart = /[0-9][0-9]:[0-9][0-9]/g
     const start = work.match(reStart);
+    const regexName = /^.*(?=(\=))/g;
+    const name = work.match(regexName);
+    console.error("regex name:", name !== [] ? name[0] : null);
+
     console.error(typeof start);
     console.error(start);
     console.error("length of day array", day.length );
